@@ -5,7 +5,9 @@ const TelegramBot = require('node-telegram-bot-api');
 require('dotenv').config()
 app.use(express.json());
 
-app.listen(3000, () => console.log('up'))
+const port = process.env.PORT || 3000
+
+app.listen(port, () => console.log('up'))
 
 const bot = new TelegramBot(`${process.env.BOT_TOKEN}`, { polling: true });
 
