@@ -5,15 +5,16 @@
  * See lib/config/default.js in the agent distribution for a more complete
  * description of configuration variables and their potential values.
  */
+require('dotenv').config()
 exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['testRelic'],
+  app_name: [`${process.env.NEW_RELIC_APP_NAME}`],
   /**
    * Your New Relic license key.
    */
-  license_key: 'NRAK-D05D589D7E5SI1UEGW168YD89OH',
+  license_key: `${process.env.NRAK-D05D589D7E5SI1UEGW168YD89OH}`,
   logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
